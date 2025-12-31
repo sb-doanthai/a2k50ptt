@@ -1,1 +1,1 @@
-# Happy-New-Years-2026
+# Happy New Year 2026 Responsive
