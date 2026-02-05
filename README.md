@@ -1,1 +1,1 @@
-# Happy New Year 2026 Responsive
+# A2K50PTT Responsive
