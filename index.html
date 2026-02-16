@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Lì xì Tết 2026 - Bao đỏ may mắn</title>
     <style>
         * {
@@ -251,6 +251,7 @@
             align-items: center;
             gap: 8px;
             transition: 0.1s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .music-control:active {
@@ -283,6 +284,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .mobile-note {
+            display: none;
+            font-size: 0.8rem;
+            color: #ffeb99;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-note {
+                display: block;
+            }
         }
 
         @media (max-width: 500px) {
@@ -328,12 +342,12 @@
     </div>
 
     <div class="music-control" id="musicToggle">
-        <span class="icon">🔊</span>
+        <span class="icon">🔈</span>
         <span class="text">Đong Đầy</span>
     </div>
 
-    <audio id="nhacTet" loop preload="auto">
-        <source src="/music/Tết Đong Đầy.mp3" type="audio/mpeg">
+    <audio id="nhacTet" loop preload="auto" crossorigin="anonymous">
+        <source src="https://vnso-zn-15-tf-a128-z3.zmdcdn.me/840b82f7ac07d6388b40f08f1bd06e9d?authen=exp=1771414113~acl=/840b82f7ac07d6388b40f08f1bd06e9d*~hmac=a2128994ad55856c560648fca5ee842f" type="audio/mpeg">
     </audio>
 
     <script>
@@ -407,6 +421,11 @@
                 lixi.style.transition = 'all 0.15s';
                 lixi.style.transform = 'rotate(0deg) scale(1.05)';
                 setTimeout(() => lixi.style.transform = '', 200);
+                
+                // Thử phát nhạc khi click vào bao lì xì nếu chưa phát
+                if (!isPlaying) {
+                    playMusic();
+                }
             });
 
             qr.addEventListener('click', (e) => e.stopPropagation());
@@ -416,14 +435,31 @@
             const icon = toggleBtn.querySelector('.icon');
             const textSpan = toggleBtn.querySelector('.text');
             let isPlaying = false;
+            let playAttempts = 0;
+            const maxAttempts = 3;
 
             function playMusic() {
-                audio.play().then(() => {
-                    isPlaying = true;
-                    toggleBtn.classList.add('playing');
-                    icon.textContent = '🔊';
-                    textSpan.textContent = 'Đang phát';
-                }).catch(e => console.log('Chưa thể phát nhạc tự động, cần tương tác'));
+                if (isPlaying) return;
+                
+                audio.play()
+                    .then(() => {
+                        isPlaying = true;
+                        toggleBtn.classList.add('playing');
+                        icon.textContent = '🔊';
+                        textSpan.textContent = 'Đang phát';
+                        console.log('Music playing successfully');
+                    })
+                    .catch(error => {
+                        console.log('Play failed:', error);
+                        playAttempts++;
+                        
+                        if (playAttempts < maxAttempts) {
+                            setTimeout(playMusic, 500);
+                        } else {
+                            icon.textContent = '🔈';
+                            textSpan.textContent = 'Nhấn để phát';
+                        }
+                    });
             }
 
             function pauseMusic() {
@@ -436,23 +472,54 @@
 
             toggleBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                isPlaying ? pauseMusic() : playMusic();
+                if (isPlaying) {
+                    pauseMusic();
+                } else {
+                    playMusic();
+                }
             });
 
             audio.load();
-            playMusic();
 
-            document.body.addEventListener('click', function firstClick() {
-                if (!isPlaying) {
-                    playMusic();
-                }
-                document.body.removeEventListener('click', firstClick);
-            }, { once: true });
+            // Tự động phát khi trang load
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(playMusic, 1000);
+            });
 
+            // Thử phát lại khi người dùng tương tác với trang
+            const userInteractions = ['click', 'touchstart', 'touchend', 'mousedown', 'keydown'];
+            
+            userInteractions.forEach(eventType => {
+                document.body.addEventListener(eventType, function initPlay() {
+                    if (!isPlaying) {
+                        playMusic();
+                    }
+                    userInteractions.forEach(ev => {
+                        document.body.removeEventListener(ev, initPlay);
+                    });
+                }, { once: false });
+            });
+
+            // Hiệu ứng ban đầu
             setTimeout(() => {
                 lixi.style.transform = 'rotate(2deg) scale(1.02)';
                 setTimeout(() => lixi.style.transform = '', 300);
             }, 500);
+
+            // Kiểm tra lỗi audio
+            audio.addEventListener('error', (e) => {
+                console.error('Audio error:', e);
+                icon.textContent = '⚠️';
+                textSpan.textContent = 'Lỗi nhạc';
+            });
+
+            // Thêm thông báo cho mobile
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                const note = document.createElement('div');
+                note.className = 'mobile-note';
+                note.innerHTML = '📱 Nhấn vào bao lì xì để phát nhạc';
+                document.querySelector('.footer-note').appendChild(note);
+            }
         })();
     </script>
 </body>
