@@ -3,1516 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A2K50 - Phan Thúc Trực - Ẩm Thực Tinh Tế</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Thêm FontAwesome Zalo icon từ CDN khác -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Lì xì Tết 2026 - Bao đỏ may mắn</title>
     <style>
-        :root {
-            --primary-color: #9a1b1b;
-            --secondary-color: #d4af37;
-            --accent-color: #2c5530;
-            --light-color: #f8f5f0;
-            --dark-color: #3a2c1c;
-            --text-color: #333;
-            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --border-radius: 12px;
-            --new-year-red: #c62828;
-            --new-year-gold: #ffd700;
-            --order-color: #2e7d32;
-            --zalo-color: #0068ff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
         }
 
-        a {
-            text-decoration: none;
-        }
-        
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--light-color);
-            overflow-x: hidden;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #9b1d1d 0%, #d32f2f 80%, #f44336 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
+            overflow-x: hidden;
+            padding: 1rem;
         }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https:/images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-            background-size: cover;
-            opacity: 0.05;
-            z-index: -1;
+
+        .couplet {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(220, 20, 20, 0.75);
+            padding: 12px 16px;
+            border-radius: 30px 8px 30px 8px;
+            color: #ffec9e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 0 3px #ffd966, 0 10px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(2px);
+            border: 2px solid #f9e076;
+            transform: rotate(-5deg);
+            white-space: nowrap;
+            z-index: 5;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
+
+        .couplet-right {
+            left: auto;
+            right: 20px;
+            transform: rotate(5deg);
+            background: rgba(200, 30, 30, 0.8);
         }
-        
+
         .container {
+            text-align: center;
+            z-index: 20;
+            position: relative;
+            max-width: 600px;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
-        
-        /* Hiệu ứng năm mới */
-        .new-year-decoration {
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #ffec9e;
+            text-shadow: 6px 6px 0 #a51b1b, 2px 2px 15px #ffd966;
+            margin-bottom: 0.5rem;
+            letter-spacing: 6px;
+            transform: rotate(-1deg);
+        }
+
+        .sub {
+            font-size: 1.5rem;
+            background: #f44336;
+            display: inline-block;
+            padding: 0.3rem 2rem;
+            border-radius: 40px;
+            color: #fde48c;
+            border: 3px solid #ffd966;
+            box-shadow: 0 4px 0 #941c1c;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .li-xi {
+            width: 260px;
+            height: 160px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #b00f1f);
+            margin: 0 auto 3rem;
+            border-radius: 30px 30px 20px 20px;
+            box-shadow: 0 20px 0 #7a0f0f, 0 30px 25px rgba(0,0,0,0.35), inset 0 -8px 8px rgba(255,255,255,0.4);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 4px solid #fccf7c;
+            transform: rotate(2deg);
+        }
+
+        .li-xi:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 22px 0 #7a0f0f, 0 35px 30px rgba(0,0,0,0.4);
+        }
+
+        .li-xi:active {
+            transform: scale(0.98) rotate(1deg);
+            box-shadow: 0 15px 0 #7a0f0f, 0 25px 20px rgba(0,0,0,0.4);
+        }
+
+        .top-fold {
+            width: 100%;
+            height: 40px;
+            background: #d32f2f;
+            border-radius: 20px 20px 0 0;
+            border-bottom: 5px dashed #f5c542;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-fold::after {
+            content: "🎋";
+            position: absolute;
+            right: 15px;
+            top: 0px;
+            font-size: 30px;
+            opacity: 0.7;
+            transform: rotate(15deg);
+        }
+
+        .top-fold::before {
+            content: "🧧";
+            position: absolute;
+            left: 15px;
+            top: -8px;
+            font-size: 34px;
+            transform: rotate(-15deg);
+        }
+
+        .chuc {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f9e57c;
+            text-shadow: 3px 3px 0 #ac1313;
+            margin: 15px 0 5px;
+            background: rgba(180, 20, 20, 0.5);
+            padding: 0.2rem 0;
+            border-radius: 30px;
+            letter-spacing: 2px;
+        }
+
+        .chuc small {
+            font-size: 1.2rem;
+            display: block;
+            color: #fff1b8;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            box-shadow: 0 15px 0 #bb2d2d, 0 20px 25px black;
+            border: 5px solid #ffcf5c;
+            margin-top: 20px;
+            transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origin: top center;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.2) translateY(-80px);
+            max-width: 100%;
+        }
+
+        .qr-box.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        .qr-box img {
+            display: block;
+            width: 250px;
+            max-width: 100%;
+            height: auto;
+            image-rendering: crisp-edges;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .qr-caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: #f44336;
+            color: #ffeb99;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            border: 2px solid #ffd966;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            color: #ffffbb;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: rgba(180,20,20,0.4);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(3px);
+            border: 1px solid #ffd966;
+        }
+
+        .floating-flower {
             position: fixed;
-            z-index: 9998;
+            top: -20px;
+            font-size: 24px;
+            opacity: 0.5;
+            animation: fall linear infinite;
+            z-index: 1;
             pointer-events: none;
         }
-        
-        .firework {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--new-year-gold);
-            animation: firework 2s infinite;
-        }
-        
-        @keyframes firework {
-            0% { transform: translateY(100vh); opacity: 1; }
-            100% { transform: translateY(-100px); opacity: 0; }
-        }
-        
-        .lantern {
-            position: absolute;
-            font-size: 1.8rem;
-            color: var(--new-year-red);
-            animation: swing 3s infinite ease-in-out;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-        
-        @keyframes swing {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-        
-        .gold-confetti {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: var(--new-year-gold);
-            opacity: 0.7;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
-        
+
         @keyframes fall {
             to { transform: translateY(100vh) rotate(360deg); }
         }
-        
-        /* Banner năm mới - Đã sửa kích thước */
-        .new-year-banner {
-            background: linear-gradient(90deg, var(--new-year-red), var(--new-year-gold));
-            color: white;
-            padding: 12px;
-            text-align: center;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            position: relative;
-            overflow: hidden;
-            font-size: 1.1rem;
-            z-index: 1001;
-        }
-        
-        .new-year-banner::before {
-            content: "🎉 🍾 🎊 🥳 🍜";
+
+        .lantern-left, .lantern-right {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            opacity: 0.2;
-            animation: bannerMove 20s linear infinite;
+            top: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 10px 8px #400000);
+            z-index: 10;
         }
-        
-        @keyframes bannerMove {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .lantern-left { left: 5px; animation: swing 3s infinite; transform-origin: top; }
+        .lantern-right { right: 5px; animation: swing 2.5s infinite; transform-origin: top; }
+        @keyframes swing {
+            0% { transform: rotate(3deg); }
+            50% { transform: rotate(-6deg); }
+            100% { transform: rotate(3deg); }
         }
-        
-        /* Header - Đã sửa kích thước */
-        header {
-            background: linear-gradient(135deg, rgba(154, 27, 27, 0.95) 0%, rgba(58, 44, 28, 0.95) 100%);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-img {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(45deg, var(--new-year-red), var(--new-year-gold));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid var(--secondary-color);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            animation: pulse 2s infinite;
-            overflow: hidden;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-            50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.8); }
-            100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-        }
-        
-        .logo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .logo-text {
-            text-align: left;
-        }
-        
-        .logo-text h1 {
-            font-size: 2.2rem;
-            margin-bottom: 2px;
-            background: linear-gradient(to right, var(--new-year-gold), #fff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1;
-        }
-        
-        .logo-text .tagline {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            color: var(--secondary-color);
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        
-        .logo-text .est {
-            font-size: 0.8rem;
-            color: #ccc;
-            letter-spacing: 1.5px;
-        }
-        
-        /* Navigation với kích thước đã sửa */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 10px;
-        }
-        
-        nav ul li {
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: white;
-            font-weight: 500;
-            padding: 10px 16px;
-            border-radius: 25px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            font-size: 0.95rem;
-            white-space: nowrap;
-        }
-        
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s;
-        }
-        
-        nav ul li a:hover::before {
-            left: 100%;
-        }
-        
-        nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Hiệu ứng cho icon trong menu */
-        nav ul li a i {
-            transition: var(--transition);
-            font-size: 1rem;
-        }
-        
-        nav ul li a:hover i {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
-        /* Menu active */
-        nav ul li a.active {
-            background: var(--secondary-color);
-            color: var(--dark-color);
-            font-weight: 600;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
+
+        .music-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #d42e2e;
+            color: #ffec9e;
+            border: 3px solid #ffcd5c;
+            border-radius: 60px;
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 10px 0 #791212, 0 8px 15px black;
             cursor: pointer;
-            background: rgba(255, 255, 255, 0.1);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+            z-index: 50;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            transition: 0.1s ease;
         }
-        
-        /* Hero Section với kích thước đã sửa */
-        .hero {
-            padding: 100px 0 60px;
-            position: relative;
-            overflow: hidden;
+
+        .music-control:active {
+            transform: translateY(6px);
+            box-shadow: 0 4px 0 #791212, 0 8px 15px black;
         }
-        
-        .hero::before {
-            content: "🍜 🥢";
+
+        .music-control.playing {
+            background: #1e7e34;
+            border-color: #f9e076;
+        }
+
+        .loading-qr {
             position: absolute;
-            font-size: 18vw;
-            opacity: 0.03;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h2 {
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .hero h2 span {
-            color: var(--new-year-gold);
-            position: relative;
-        }
-        
-        .hero h2 span::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--new-year-gold), transparent);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            color: var(--dark-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 13px 30px;
-            background: linear-gradient(45deg, var(--primary-color), var(--new-year-red));
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(154, 27, 27, 0.3);
-            position: relative;
-            overflow: hidden;
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(154, 27, 27, 0.4);
-        }
-        
-        .btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s;
-        }
-        
-        .btn:hover::after {
-            left: 100%;
-        }
-        
-        .btn-order {
-            background: linear-gradient(45deg, var(--order-color), #4caf50);
-            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
-        }
-        
-        .btn-order:hover {
-            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
-        }
-        
-        /* Order Section */
-        .order-section {
-            padding: 70px 0;
-            background-color: rgba(46, 125, 50, 0.05);
-            position: relative;
-        }
-        
-        .order-section::before {
-            content: "🚴‍♂️";
-            position: absolute;
-            font-size: 8rem;
-            opacity: 0.05;
-            top: 40px;
-            right: 40px;
-            animation: deliveryMove 15s linear infinite;
-        }
-        
-        @keyframes deliveryMove {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(calc(100vw + 100px)); }
-        }
-        
-        .order-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 35px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .order-steps {
-            display: flex;
-            justify-content: space-between;
-            margin: 35px 0;
-            position: relative;
-        }
-        
-        .order-steps::before {
-            content: "";
-            position: absolute;
-            top: 25px;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(to right, var(--secondary-color), var(--order-color));
-            z-index: 1;
-        }
-        
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            background-color: white;
-            padding: 0 15px;
-        }
-        
-        .step-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--order-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 12px;
-            color: white;
-            font-size: 1.3rem;
-        }
-        
-        /* Menu Section */
-        .menu-section {
-            padding: 70px 0;
-            background-color: rgba(248, 245, 240, 0.8);
-            position: relative;
-        }
-        
-        .menu-section::before {
-            content: "🎊";
-            position: absolute;
-            font-size: 8rem;
-            opacity: 0.05;
-            top: 40px;
-            right: 40px;
-            animation: rotate 20s linear infinite;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.4rem;
-            color: var(--dark-color);
-            display: inline-block;
-            padding-bottom: 12px;
-        }
-        
-        .section-title h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: var(--text-color);
-            max-width: 700px;
-            margin: 15px auto 0;
-            font-size: 1.1rem;
-        }
-        
-        .menu-category {
-            margin-bottom: 50px;
-        }
-        
-        .category-title {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-            padding-bottom: 8px;
-            border-bottom: 2px dashed var(--secondary-color);
-            display: inline-block;
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .menu-item {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .menu-item::before {
-            content: "🔥";
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            font-size: 1.3rem;
-            z-index: 2;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .menu-item:hover::before {
-            opacity: 1;
-            animation: bounce 1s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .menu-image {
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .menu-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-        
-        .menu-item:hover .menu-image img {
-            transform: scale(1.1);
-        }
-        
-        .menu-info {
-            padding: 20px;
-        }
-        
-        .menu-info h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-        
-        .menu-info p {
-            color: var(--text-color);
-            margin-bottom: 12px;
+            color: #d32f2f;
+            font-weight: bold;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
             font-size: 0.9rem;
+            white-space: nowrap;
         }
-        
-        .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--new-year-red);
-            display: block;
-            margin-top: 8px;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 70px 0;
-            background: linear-gradient(135deg, rgba(58, 44, 28, 0.9) 0%, rgba(154, 27, 27, 0.9) 100%);
-            color: white;
+
+        .qr-wrapper {
             position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-section::before {
-            content: "🍜 🥢 🍚 🥟";
-            position: absolute;
-            font-size: 6rem;
-            opacity: 0.05;
-            top: 15px;
-            left: 15px;
-            animation: move 30s linear infinite;
-        }
-        
-        @keyframes move {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(calc(100vw + 100px)); }
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .contact-info h2, .qr-section h2 {
-            color: var(--secondary-color);
-            font-size: 2rem;
-            margin-bottom: 25px;
-        }
-        
-        .contact-info h2::after, .qr-section h2::after {
-            content: "";
-            display: block;
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin-top: 8px;
-        }
-        
-        .contact-details {
-            margin-top: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 18px;
-            font-size: 1rem;
-        }
-        
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            background-color: rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 12px;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
         }
-        
-        /* Icon Zalo đặc biệt */
-        .contact-icon.zalo-icon {
-            background-color: rgba(0, 104, 255, 0.2);
-            color: var(--zalo-color);
-        }
-        
-        .zalo-icon {
-            color: var(--zalo-color);
-        }
-        
-        /* Custom Zalo Icon */
-        .fab.fa-zalo:before {
-            content: "Z";
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
-        .qr-container {
-            background-color: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            max-width: 380px;
-            margin: 0 auto;
-        }
-        
-        .qr-placeholder {
-            width: 220px;
-            height: 220px;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            border: 2px dashed #ccc;
-        }
-        
-        .qr-placeholder i {
-            font-size: 3.5rem;
-            color: #aaa;
-        }
-        
-        .qr-note {
-            font-style: italic;
-            color: var(--dark-color);
-            margin-top: 12px;
-            font-size: 0.85rem;
-        }
-        
-        .phone-number {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 15px 0;
-            display: block;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .phone-number:hover {
-            color: var(--new-year-red);
-            transform: scale(1.05);
-        }
-        
-        .account-holder {
-            background-color: rgba(212, 175, 55, 0.2);
-            padding: 12px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 25px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 35px;
-        }
-        
-        .footer-logo {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, var(--new-year-gold), var(--secondary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin: 25px 0;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .social-icon.zalo {
-            background-color: rgba(0, 104, 255, 0.2);
-        }
-        
-        .social-icon.zalo:hover {
-            background-color: var(--zalo-color);
-        }
-        
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.85rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1100px) {
-            nav ul {
-                gap: 8px;
-            }
-            
-            nav ul li a {
-                padding: 8px 14px;
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .hero h2 {
-                font-size: 2.4rem;
-            }
-            
-            .order-steps {
-                flex-direction: column;
-                gap: 35px;
-            }
-            
-            .order-steps::before {
-                display: none;
-            }
-            
-            .logo-text h1 {
-                font-size: 2rem;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 850px) {
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .logo-img {
-                width: 60px;
-                height: 60px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: rgba(58, 44, 28, 0.98);
-                flex-direction: column;
-                padding: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-                text-align: center;
-                gap: 8px;
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav ul li a {
-                justify-content: center;
-                padding: 12px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.8rem;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.85rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .new-year-banner {
-                font-size: 1rem;
-                padding: 10px;
-                letter-spacing: 1px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero {
-                padding: 80px 0 50px;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .order-container {
-                padding: 25px;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                font-size: 0.95rem;
-            }
-            
-            .logo-container {
-                gap: 10px;
-            }
-            
-            .logo-img {
-                width: 55px;
-                height: 55px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.6rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .new-year-banner {
-                font-size: 0.9rem;
-                padding: 8px;
-            }
-            
-            .hero h2 {
-                font-size: 1.6rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.5rem;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.8rem;
-                letter-spacing: 1px;
-            }
+
+        @media (max-width: 500px) {
+            .title { font-size: 2.5rem; }
+            .li-xi { width: 220px; height: 140px; }
+            .qr-box img { width: 200px; }
+            .couplet { font-size: 1rem; padding: 8px 10px; }
+            .music-control { padding: 8px 16px; font-size: 1.2rem; bottom: 15px; right: 15px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hiệu ứng năm mới -->
-    <div id="newYearEffects"></div>
-    
-    <!-- Banner năm mới - Đã sửa kích thước -->
-    <div class="new-year-banner">
-        CHÚC MỪNG NĂM MỚI 2025 - AN KHANG THỊNH VƯỢNG - PHÁT TÀI PHÁT LỘC
+    <div class="lantern-left">🏮</div>
+    <div class="lantern-right">🏮</div>
+    <div class="couplet"><span>🔴</span> CUNG HỈ PHÁT TÀI <span>🔴</span></div>
+    <div class="couplet couplet-right"><span>🎍</span> VẠN SỰ NHƯ Ý <span>🍊</span></div>
+    <div id="flower-container" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></div>
+
+    <div class="container">
+        <h1 class="title">LÌ XÌ ĐẦU NĂM</h1>
+        <div class="sub">Mậu Tuất · 2026</div>
+
+        <div class="li-xi" id="lixiBox">
+            <div class="top-fold"></div>
+            <div class="chuc">
+                Lộc phát <br>
+                <small>🧧 Lì xì mở qr 🧧</small>
+            </div>
+        </div>
+
+        <div id="qrContainer" class="qr-box">
+            <div class="qr-wrapper" id="qrWrapper">
+                <div class="loading-qr" id="loadingQR">Đang tạo mã QR...</div>
+                <img src="" alt="QR chuyển khoản" id="qrImage" style="display: none;">
+            </div>
+            <div class="qr-caption">QUÉT MÃ - LÌ XÌ MAY MẮN</div>
+            <div style="font-size: 0.9rem; color: #d32f2f; margin-top: 8px;" id="bankInfo">THAI QUANG HIEU - 0358682751 - MB Bank</div>
+        </div>
+
+        <div class="footer-note">
+            <span>🧧</span> Nhấn vào bao lì xì đỏ <span>🧧</span>
+        </div>
     </div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo-container">
-                <div class="logo-img">
-                    <!-- Thay thế logo của bạn ở đây -->
-                    <img src="images/logo.png" alt="Logo"></img>
-                </div>
-                <div class="logo-text">
-                    <h1>A2K50</h1>
-                    <div class="tagline">PHAN THÚC TRỰC</div>
-                    <div class="est">EST. 2024</div>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav>
-                <ul id="mainNav">
-                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Trang Chủ</a></li>
-                    <li><a href="#order"><i class="fas fa-shopping-cart"></i> Đặt Hàng Online</a></li>
-                    <li><a href="#menu"><i class="fas fa-utensils"></i> Thực Đơn</a></li>
-                    <li><a href="#contact"><i class="fas fa-qrcode"></i> Liên Hệ & QR</a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> Về Chúng Tôi</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h2>Chào Mừng Đến <span>A2K50</span></h2>
-            <p>Khám phá thế giới ẩm thực tinh tế với những món ăn được chế biến công phu, nguyên liệu tươi ngon và hương vị đặc trưng. Trải nghiệm ẩm thực đích thực tại Phan Thúc Trực.</p>
-            <a href="#order" class="btn btn-order">Đặt Hàng Ngay</a>
-            <a href="#menu" class="btn">Khám Phá Thực Đơn</a>
-        </div>
-    </section>
+    <div class="music-control" id="musicToggle">
+        <span class="icon">🔊</span>
+        <span class="text">Đong Đầy</span>
+    </div>
 
-    <!-- Order Online Section -->
-    <section class="order-section" id="order">
-        <div class="container">
-            <div class="section-title">
-                <h2>Đặt Hàng Online</h2>
-                <p>Chúng tôi sẽ giao hàng tận nơi cho bạn chỉ với 3 bước đơn giản</p>
-            </div>
-            
-            <div class="order-container">
-                <div class="order-steps">
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>1. Đặt Hàng</h3>
-                        <p>Gọi điện hoặc nhắn tin Zalo đến số <strong>0359.151.021</strong></p>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <h3>2. Chế Biến</h3>
-                        <p>Chúng tôi chế biến món ăn với nguyên liệu tươi ngon nhất</p>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-shipping-fast"></i>
-                        </div>
-                        <h3>3. Giao Hàng</h3>
-                        <p>Nhận hàng tận nơi trong thời gian sớm nhất</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 35px;">
-                    <h3>Gọi ngay để đặt hàng:</h3>
-                    <div class="phone-number">0359.151.021</div>
-                    <p>Hoặc nhắn tin qua Zalo: 0359.151.021</p>
-                    <a href="tel:0359151021" class="btn btn-order" style="margin-top: 20px;">
-                        <i class="fas fa-phone"></i> Gọi Ngay
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="menu-section" id="menu">
-        <div class="container">
-            <div class="section-title">
-                <h2>Thực Đơn Đặc Biệt</h2>
-                <p>Thưởng thức những món ăn đặc sắc với công thức độc quyền, mang đậm hương vị truyền thống</p>
-            </div>
-            
-            <!-- Món ăn vặt -->
-            <div class="menu-category">
-                <h3 class="category-title">Món Ăn Vặt</h3>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/khoaitay.png" alt="Khoai tây lắc phô mai">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Khoai Tây Lắc Phô Mai</h3>
-                            <p>Khoai tây chiên giòn lắc với phô mai béo ngậy, thơm lừng</p>
-                            <span class="price">10.000 VNĐ/phần</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/xoaydam.png" alt="Xoài dầm">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Xoài Dầm</h3>
-                            <p>Xoài xanh giòn chua ngọt kết hợp với muối ớt đặc biệt</p>
-                            <span class="price">10.000 VNĐ/phần</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/nemchuaran.png" alt="Nem chua rán">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Nem Chua Rán</h3>
-                            <p>Nem chua chiên giòn, chua ngọt hài hòa, ăn kèm rau sống</p>
-                            <span class="price">10.000 VNĐ/phần</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/khoailangken.png" alt="Khoai lang kén">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Khoai Lang Kén</h3>
-                            <p>Khoai lang chiên giòn rụm với lớp vỏ vàng ruộm hấp dẫn</p>
-                            <span class="price">15.000 VNĐ/phần</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/xx.png" alt="Xúc xích">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Xúc Xích</h3>
-                            <p>Xúc xích chiên thơm ngon, vàng giòn, đậm đà hương vị</p>
-                            <span class="price">10.000 VNĐ/cây</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/chacuon.png" alt="Chả cuốn">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Chả Cuốn</h3>
-                            <p>Chả cuốn thơm ngon, đầy đặn với nhân thịt và rau củ</p>
-                            <span class="price">45.000 VNĐ/hộp</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/hotdog.png" alt="HOTDOG">
-                        </div>
-                        <div class="menu-info">
-                            <h3>HOTDOG</h3>
-                            <p>Hotdog với xúc xích dai ngon, sốt đặc biệt và rau củ tươi</p>
-                            <span class="price">15.000 VNĐ/cây</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Đồ uống -->
-            <div class="menu-category">
-                <h3 class="category-title">Đồ Uống</h3>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/tradao.png" alt="Trà đào">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Trà Đào</h3>
-                            <p>Trà đào thơm ngon, thanh mát với miếng đào tươi ngọt</p>
-                            <span class="price">10.000 VNĐ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/sodavietquat.png" alt="SODA việt quất">
-                        </div>
-                        <div class="menu-info">
-                            <h3>SODA Việt Quất</h3>
-                            <p>Soda việt quất mát lạnh, chua ngọt hài hòa, sảng khoái</p>
-                            <span class="price">15.000 VNĐ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/milktea.png" alt="Trà sữa">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Trà Sữa</h3>
-                            <p>Trà sữa thơm ngon, béo ngậy với trân châu dai giòn</p>
-                            <span class="price">20.000 VNĐ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-image">
-                            <img src="images/lemontea.png" alt="Trà chanh">
-                        </div>
-                        <div class="menu-info">
-                            <h3>Trà Chanh</h3>
-                            <p>Trà chanh thanh mát, chua ngọt nhẹ nhàng, giải khát tuyệt vời</p>
-                            <span class="price">10.000 VNĐ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & QR Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Liên Hệ Với Chúng Tôi</h2>
-                    <p>Chúng tôi luôn sẵn sàng phục vụ và mang đến cho bạn những trải nghiệm ẩm thực tuyệt vời nhất.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Điện Thoại Đặt Hàng</h4>
-                                <p class="phone-number">0359.151.021</p>
-                                <p>Gọi ngay để đặt hàng và được tư vấn</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon zalo-icon">
-                                <i class="fab fa-zalo zalo-icon"></i>
-                            </div>
-                            <div>
-                                <h4>Zalo</h4>
-                                <p>0359.151.021</p>
-                                <p>Nhắn tin qua Zalo để đặt hàng nhanh chóng</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4>Giờ Mở Cửa</h4>
-                                <p>8:00 - 17:00 vào thứ 7 và 14:00 - 17:00 vào thứ 6</p>
-                                <p>Phục vụ cả buổi trưa</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="qr-section">
-                    <h2>Thanh Toán QR Code</h2>
-                    <p>Quét mã QR để thanh toán nhanh chóng và tiện lợi.</p>
-                    
-                    <div class="qr-container">
-                        <!-- Thay thế phần placeholder bằng ảnh QR thực tế -->
-                        <div class="qr-image">
-                            <img src="images/qrbank.jpg" alt="QR Code Thanh Toán" style="width: 220px; height: 220px;"></img>
-                        </div>
-                        <p>Quét mã QR để thanh toán</p>
-                        <div class="phone-number">0359.151.021</div>
-                        <div class="account-holder">
-                            <p><strong>Chủ tài khoản:</strong></p>
-                            <h3>NGUYEN KIM OANH</h3>
-                        </div>
-                        <div class="bank-info">
-                            <p><i class="fas fa-university"></i> <strong>Ngân hàng:</strong> [Tên ngân hàng của bạn]</p>
-                            <p><i class="fas fa-credit-card"></i> <strong>Số tài khoản:</strong> [Số tài khoản của bạn]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="about">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">A2K50</div>
-                <p>Phan Thúc Trực - Ẩm thực tinh tế, hương vị đích thực</p>
-                <p>Mang đến trải nghiệm ẩm thực độc đáo với nguyên liệu tươi ngon và công thức đặc biệt</p>
-                
-                <div class="social-links">
-                    <a href="https://zalo.me/0359151021" class="social-icon zalo">
-                        <i class="fab fa-zalo zalo-icon"></i>
-                    </a>
-                    <a href="https://facebook.com" class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="tel:0359151021" class="social-icon">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                    <a href="https://instagram.com" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 - 2025 A2K50 - Phan Thúc Trực. Tất cả các quyền được bảo lưu.</p>
-                <p>Điện thoại: 0359.151.021 | EST. 2024</p>
-            </div>
-        </div>
-    </footer>
+    <audio id="nhacTet" loop preload="auto">
+        <source src="/music/Tết Đong Đầy.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        // Tạo hiệu ứng năm mới
-        function createNewYearEffects() {
-            const effectsContainer = document.getElementById('newYearEffects');
-            
-            // Tạo pháo hoa
-            for (let i = 0; i < 25; i++) {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
-                firework.style.left = Math.random() * 100 + 'vw';
-                firework.style.backgroundColor = i % 2 === 0 ? 'var(--new-year-red)' : 'var(--new-year-gold)';
-                firework.style.animationDelay = Math.random() * 2 + 's';
-                effectsContainer.appendChild(firework);
+        (function() {
+            const flowerContainer = document.getElementById('flower-container');
+            const flowers = ['🌸', '🌼', '🏵️', '🌺', '🍊', '🎋', '🍃'];
+            for (let i = 0; i < 30; i++) {
+                const fl = document.createElement('div');
+                fl.className = 'floating-flower';
+                fl.style.left = Math.random() * 100 + '%';
+                fl.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                fl.style.animationDelay = (Math.random() * 10) + 's';
+                fl.style.fontSize = (Math.random() * 30 + 18) + 'px';
+                fl.style.opacity = Math.random() * 0.3 + 0.2;
+                fl.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+                flowerContainer.appendChild(fl);
             }
-            
-            // Tạo đèn lồng
-            for (let i = 0; i < 6; i++) {
-                const lantern = document.createElement('div');
-                lantern.className = 'lantern';
-                lantern.innerHTML = '🏮';
-                lantern.style.left = Math.random() * 90 + 'vw';
-                lantern.style.top = Math.random() * 30 + 'vh';
-                lantern.style.animationDelay = Math.random() * 3 + 's';
-                lantern.style.fontSize = (Math.random() * 1.5 + 1.3) + 'rem';
-                effectsContainer.appendChild(lantern);
-            }
-            
-            // Tạo confetti vàng
-            for (let i = 0; i < 40; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'gold-confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                confetti.style.animationDuration = (Math.random() * 5 + 3) + 's';
-                confetti.style.width = (Math.random() * 8 + 4) + 'px';
-                confetti.style.height = confetti.style.width;
-                effectsContainer.appendChild(confetti);
-            }
-        }
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        const navLinks = document.querySelectorAll('nav a');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('show');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('show') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Đóng menu mobile khi click vào link và thêm active class
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('show');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                
-                // Xóa active class từ tất cả các link
-                navLinks.forEach(item => item.classList.remove('active'));
-                // Thêm active class cho link được click
-                link.classList.add('active');
-            });
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+
+            const lixi = document.getElementById('lixiBox');
+            const qr = document.getElementById('qrContainer');
+            const qrImage = document.getElementById('qrImage');
+            const loadingQR = document.getElementById('loadingQR');
+            const bankInfo = document.getElementById('bankInfo');
+
+            async function generateQRFromAPI() {
+                try {
+                    const payload = {
+                        accountNo: "0358682751",
+                        accountName: "THAI QUANG HIEU",
+                        acqId: "970422",
+                        addInfo: "Li xi dau nam 2026",
+                        amount: "",
+                        template: "compact"
+                    };
+
+                    const response = await fetch('https://api.vietqr.io/v2/generate', {
+                        method: 'POST',
+                        headers: {
+                            'x-client-id': '6c02c1b8-39e9-4b64-beff-bfec33db0056',
+                            'x-api-key': 'e9058a02-8d96-44dd-97e7-f49c8c4f4005',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
                     });
-                }
-            });
-        });
-        
-        // Thêm hiệu ứng khi cuộn trang - thay đổi active menu
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    // Xóa active class từ tất cả các link
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    // Thêm active class cho link tương ứng
-                    document.querySelector(`nav a[href="#${sectionId}"]`)?.classList.add('active');
-                }
-            });
-        });
-        
-        // Khởi tạo hiệu ứng năm mới
-        document.addEventListener('DOMContentLoaded', function() {
-            createNewYearEffects();
-            
-            // Thêm hiệu ứng cho các món ăn
-            const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach((item, index) => {
-                // Thêm độ trễ hiệu ứng cho từng món ăn
-                item.style.animationDelay = (index * 0.1) + 's';
-                
-                // Hiệu ứng khi di chuột vào món ăn
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-12px) scale(1.02)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-            
-            // Hiệu ứng cho các nút
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.05)';
-                });
-                
-                btn.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-            
-            // Hiệu ứng cho số điện thoại
-            const phoneNumbers = document.querySelectorAll('.phone-number');
-            phoneNumbers.forEach(phone => {
-                phone.addEventListener('click', function() {
-                    // Tạo hiệu ứng copy
-                    const originalText = this.textContent;
-                    this.textContent = 'Đã sao chép số!';
-                    this.style.color = 'var(--new-year-gold)';
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const data = await response.json();
                     
-                    // Copy số điện thoại vào clipboard
-                    navigator.clipboard.writeText('0359151021');
-                    
-                    setTimeout(() => {
-                        this.textContent = originalText;
-                        this.style.color = '';
-                    }, 2000);
-                });
+                    if (data.code === "00" && data.data && data.data.qrDataURL) {
+                        qrImage.src = data.data.qrDataURL;
+                        qrImage.style.display = 'block';
+                        loadingQR.style.display = 'none';
+                    } else {
+                        throw new Error('Invalid response format');
+                    }
+                } catch (error) {
+                    console.error('Error generating QR:', error);
+                    loadingQR.innerHTML = 'Không thể tạo mã QR. Vui lòng thử lại sau.';
+                    loadingQR.style.background = '#f44336';
+                    loadingQR.style.color = 'white';
+                }
+            }
+
+            generateQRFromAPI();
+
+            lixi.addEventListener('click', () => {
+                qr.classList.toggle('show');
+                lixi.style.transition = 'all 0.15s';
+                lixi.style.transform = 'rotate(0deg) scale(1.05)';
+                setTimeout(() => lixi.style.transform = '', 200);
             });
-        });
+
+            qr.addEventListener('click', (e) => e.stopPropagation());
+
+            const audio = document.getElementById('nhacTet');
+            const toggleBtn = document.getElementById('musicToggle');
+            const icon = toggleBtn.querySelector('.icon');
+            const textSpan = toggleBtn.querySelector('.text');
+            let isPlaying = false;
+
+            function playMusic() {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    toggleBtn.classList.add('playing');
+                    icon.textContent = '🔊';
+                    textSpan.textContent = 'Đang phát';
+                }).catch(e => console.log('Chưa thể phát nhạc tự động, cần tương tác'));
+            }
+
+            function pauseMusic() {
+                audio.pause();
+                isPlaying = false;
+                toggleBtn.classList.remove('playing');
+                icon.textContent = '🔈';
+                textSpan.textContent = 'Đong Đầy';
+            }
+
+            toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isPlaying ? pauseMusic() : playMusic();
+            });
+
+            audio.load();
+            playMusic();
+
+            document.body.addEventListener('click', function firstClick() {
+                if (!isPlaying) {
+                    playMusic();
+                }
+                document.body.removeEventListener('click', firstClick);
+            }, { once: true });
+
+            setTimeout(() => {
+                lixi.style.transform = 'rotate(2deg) scale(1.02)';
+                setTimeout(() => lixi.style.transform = '', 300);
+            }, 500);
+        })();
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
