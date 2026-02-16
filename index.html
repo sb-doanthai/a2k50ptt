@@ -20,32 +20,43 @@
             justify-content: center;
             position: relative;
             overflow-x: hidden;
-            padding: 1rem;
+            padding: 0.8rem;
         }
 
+        /* Câu đối responsive */
         .couplet {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(220, 20, 20, 0.75);
-            padding: 12px 16px;
+            top: 15px;
+            left: 10px;
+            background: rgba(220, 20, 20, 0.85);
+            padding: 10px 14px;
             border-radius: 30px 8px 30px 8px;
             color: #ffec9e;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             box-shadow: 0 0 0 3px #ffd966, 0 10px 20px rgba(0,0,0,0.2);
             backdrop-filter: blur(2px);
             border: 2px solid #f9e076;
-            transform: rotate(-5deg);
+            transform: rotate(-3deg);
             white-space: nowrap;
             z-index: 5;
         }
 
         .couplet-right {
             left: auto;
-            right: 20px;
-            transform: rotate(5deg);
-            background: rgba(200, 30, 30, 0.8);
+            right: 10px;
+            transform: rotate(3deg);
+        }
+
+        @media (max-width: 480px) {
+            .couplet {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+                top: 10px;
+            }
+            .couplet span {
+                font-size: 0.9rem;
+            }
         }
 
         .container {
@@ -54,38 +65,40 @@
             position: relative;
             max-width: 600px;
             width: 100%;
+            margin: 60px 0 40px;
         }
 
         .title {
-            font-size: 3.2rem;
+            font-size: clamp(2.2rem, 10vw, 3.5rem);
             font-weight: 800;
             color: #ffec9e;
-            text-shadow: 6px 6px 0 #a51b1b, 2px 2px 15px #ffd966;
-            margin-bottom: 0.5rem;
-            letter-spacing: 6px;
+            text-shadow: 4px 4px 0 #a51b1b, 2px 2px 15px #ffd966;
+            margin-bottom: 0.3rem;
+            letter-spacing: 4px;
             transform: rotate(-1deg);
+            line-height: 1.2;
         }
 
         .sub {
-            font-size: 1.5rem;
+            font-size: clamp(1.1rem, 5vw, 1.5rem);
             background: #f44336;
             display: inline-block;
-            padding: 0.3rem 2rem;
+            padding: 0.3rem 1.5rem;
             border-radius: 40px;
             color: #fde48c;
             border: 3px solid #ffd966;
             box-shadow: 0 4px 0 #941c1c;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
         }
 
         .li-xi {
-            width: 260px;
-            height: 160px;
+            width: min(260px, 70vw);
+            height: min(160px, 42vw);
             background: radial-gradient(circle at 30% 30%, #ff6b6b, #b00f1f);
-            margin: 0 auto 3rem;
+            margin: 0 auto 2rem;
             border-radius: 30px 30px 20px 20px;
-            box-shadow: 0 20px 0 #7a0f0f, 0 30px 25px rgba(0,0,0,0.35), inset 0 -8px 8px rgba(255,255,255,0.4);
+            box-shadow: 0 15px 0 #7a0f0f, 0 30px 25px rgba(0,0,0,0.35), inset 0 -8px 8px rgba(255,255,255,0.4);
             position: relative;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -95,17 +108,17 @@
 
         .li-xi:hover {
             transform: rotate(0deg) scale(1.02);
-            box-shadow: 0 22px 0 #7a0f0f, 0 35px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 18px 0 #7a0f0f, 0 35px 30px rgba(0,0,0,0.4);
         }
 
         .li-xi:active {
             transform: scale(0.98) rotate(1deg);
-            box-shadow: 0 15px 0 #7a0f0f, 0 25px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 0 #7a0f0f, 0 25px 20px rgba(0,0,0,0.4);
         }
 
         .top-fold {
             width: 100%;
-            height: 40px;
+            height: 25%;
             background: #d32f2f;
             border-radius: 20px 20px 0 0;
             border-bottom: 5px dashed #f5c542;
@@ -116,9 +129,9 @@
         .top-fold::after {
             content: "🎋";
             position: absolute;
-            right: 15px;
-            top: 0px;
-            font-size: 30px;
+            right: 10px;
+            top: -5px;
+            font-size: clamp(24px, 8vw, 30px);
             opacity: 0.7;
             transform: rotate(15deg);
         }
@@ -126,18 +139,18 @@
         .top-fold::before {
             content: "🧧";
             position: absolute;
-            left: 15px;
-            top: -8px;
-            font-size: 34px;
+            left: 10px;
+            top: -10px;
+            font-size: clamp(28px, 9vw, 34px);
             transform: rotate(-15deg);
         }
 
         .chuc {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 6vw, 1.8rem);
             font-weight: bold;
             color: #f9e57c;
-            text-shadow: 3px 3px 0 #ac1313;
-            margin: 15px 0 5px;
+            text-shadow: 2px 2px 0 #ac1313;
+            margin: 12px 0 5px;
             background: rgba(180, 20, 20, 0.5);
             padding: 0.2rem 0;
             border-radius: 30px;
@@ -145,25 +158,25 @@
         }
 
         .chuc small {
-            font-size: 1.2rem;
+            font-size: clamp(0.9rem, 4vw, 1.2rem);
             display: block;
             color: #fff1b8;
         }
 
         .qr-box {
             background: white;
-            padding: 1.2rem;
-            border-radius: 40px;
+            padding: 1rem;
+            border-radius: 35px;
             display: inline-block;
-            box-shadow: 0 15px 0 #bb2d2d, 0 20px 25px black;
+            box-shadow: 0 12px 0 #bb2d2d, 0 20px 25px black;
             border: 5px solid #ffcf5c;
-            margin-top: 20px;
+            margin-top: 15px;
             transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform-origin: top center;
             opacity: 0;
             visibility: hidden;
-            transform: scale(0.2) translateY(-80px);
-            max-width: 100%;
+            transform: scale(0.2) translateY(-60px);
+            max-width: 95%;
         }
 
         .qr-box.show {
@@ -174,41 +187,53 @@
 
         .qr-box img {
             display: block;
-            width: 250px;
+            width: min(250px, 60vw);
             max-width: 100%;
             height: auto;
             image-rendering: crisp-edges;
             border-radius: 20px;
-            margin-bottom: 10px;
+            margin: 0 auto 10px;
         }
 
         .qr-caption {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 4vw, 1.2rem);
             font-weight: bold;
             background: #f44336;
             color: #ffeb99;
-            padding: 0.4rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 30px;
             border: 2px solid #ffd966;
         }
 
         .footer-note {
-            margin-top: 30px;
+            margin-top: 25px;
             color: #ffffbb;
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 4.5vw, 1.3rem);
             font-weight: 600;
-            background: rgba(180,20,20,0.4);
+            background: rgba(180,20,20,0.5);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             backdrop-filter: blur(3px);
             border: 1px solid #ffd966;
         }
 
+        .footer-note span {
+            font-size: clamp(1.4rem, 6vw, 1.8rem);
+            display: inline-block;
+            animation: wave 1.5s infinite;
+        }
+
+        @keyframes wave {
+            0%,100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
         .floating-flower {
             position: fixed;
             top: -20px;
-            font-size: 24px;
-            opacity: 0.5;
+            font-size: clamp(18px, 6vw, 28px);
+            opacity: 0.4;
             animation: fall linear infinite;
             z-index: 1;
             pointer-events: none;
@@ -220,48 +245,18 @@
 
         .lantern-left, .lantern-right {
             position: absolute;
-            top: 20px;
-            font-size: 4rem;
-            filter: drop-shadow(0 10px 8px #400000);
+            top: 10px;
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            filter: drop-shadow(0 8px 6px #400000);
             z-index: 10;
         }
-        .lantern-left { left: 5px; animation: swing 3s infinite; transform-origin: top; }
-        .lantern-right { right: 5px; animation: swing 2.5s infinite; transform-origin: top; }
+        .lantern-left { left: 2px; animation: swing 3s infinite; transform-origin: top; }
+        .lantern-right { right: 2px; animation: swing 2.5s infinite; transform-origin: top; }
+        
         @keyframes swing {
             0% { transform: rotate(3deg); }
             50% { transform: rotate(-6deg); }
             100% { transform: rotate(3deg); }
-        }
-
-        .music-control {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #d42e2e;
-            color: #ffec9e;
-            border: 3px solid #ffcd5c;
-            border-radius: 60px;
-            padding: 12px 20px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            box-shadow: 0 10px 0 #791212, 0 8px 15px black;
-            cursor: pointer;
-            z-index: 50;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.1s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .music-control:active {
-            transform: translateY(6px);
-            box-shadow: 0 4px 0 #791212, 0 8px 15px black;
-        }
-
-        .music-control.playing {
-            background: #1e7e34;
-            border-color: #f9e076;
         }
 
         .loading-qr {
@@ -272,39 +267,59 @@
             color: #d32f2f;
             font-weight: bold;
             background: white;
-            padding: 5px 10px;
-            border-radius: 20px;
+            padding: 5px 12px;
+            border-radius: 25px;
             font-size: 0.9rem;
             white-space: nowrap;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .qr-wrapper {
             position: relative;
-            min-height: 250px;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        .music-status {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.5);
+            color: #ffeb99;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid #ffd966;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+        }
+
         .mobile-note {
-            display: none;
             font-size: 0.8rem;
             color: #ffeb99;
-            margin-top: 5px;
+            margin-top: 8px;
+            background: rgba(180,20,20,0.3);
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
         }
 
-        @media (max-width: 768px) {
-            .mobile-note {
-                display: block;
+        @media (max-width: 480px) {
+            body { padding: 0.5rem; }
+            .container { margin: 50px 0 30px; }
+            .qr-wrapper { min-height: 180px; }
+            .music-status { 
+                bottom: 10px; 
+                left: 10px;
+                font-size: 0.7rem;
+                padding: 4px 10px;
             }
-        }
-
-        @media (max-width: 500px) {
-            .title { font-size: 2.5rem; }
-            .li-xi { width: 220px; height: 140px; }
-            .qr-box img { width: 200px; }
-            .couplet { font-size: 1rem; padding: 8px 10px; }
-            .music-control { padding: 8px 16px; font-size: 1.2rem; bottom: 15px; right: 15px; }
         }
     </style>
 </head>
@@ -323,7 +338,7 @@
             <div class="top-fold"></div>
             <div class="chuc">
                 Lộc phát <br>
-                <small>🧧 Lì xì mở qr 🧧</small>
+                <small>🧧 Lì xì mở QR 🧧</small>
             </div>
         </div>
 
@@ -333,34 +348,38 @@
                 <img src="" alt="QR chuyển khoản" id="qrImage" style="display: none;">
             </div>
             <div class="qr-caption">QUÉT MÃ - LÌ XÌ MAY MẮN</div>
-            <div style="font-size: 0.9rem; color: #d32f2f; margin-top: 8px;" id="bankInfo">THAI QUANG HIEU - 0358682751 - MB Bank</div>
+            <div style="font-size: 0.8rem; color: #d32f2f; margin-top: 6px;" id="bankInfo">THAI QUANG HIEU - 0358682751 - MB Bank</div>
         </div>
 
         <div class="footer-note">
             <span>🧧</span> Nhấn vào bao lì xì đỏ <span>🧧</span>
         </div>
+        <div class="mobile-note">📱 Chạm vào bao lì xì để mở QR</div>
     </div>
 
-    <div class="music-control" id="musicToggle">
-        <span class="icon">🔈</span>
-        <span class="text">Đong Đầy</span>
+    <div class="music-status" id="musicStatus">
+        <span>🔊</span>
+        <span>Đang phát nhạc Tết</span>
     </div>
 
     <audio id="nhacTet" loop preload="auto" crossorigin="anonymous">
-        <source src="https://vnso-zn-15-tf-a128-z3.zmdcdn.me/840b82f7ac07d6388b40f08f1bd06e9d?authen=exp=1771414113~acl=/840b82f7ac07d6388b40f08f1bd06e9d*~hmac=a2128994ad55856c560648fca5ee842f" type="audio/mpeg">
+        <source src="https://data.chiasenhac.com/data/over2/298/297827-5f1ffc38/01%20-%20Dong%20Day%20(Remix)%20-%32Do%20Hoang%20Hiep.mp3" type="audio/mpeg">
+        <source src="https://cdn.chinh.io/file/tetmusic/dongday_inst.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         (function() {
+            // Tạo hoa rơi
             const flowerContainer = document.getElementById('flower-container');
             const flowers = ['🌸', '🌼', '🏵️', '🌺', '🍊', '🎋', '🍃'];
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 25; i++) {
                 const fl = document.createElement('div');
                 fl.className = 'floating-flower';
                 fl.style.left = Math.random() * 100 + '%';
-                fl.style.animationDuration = (Math.random() * 8 + 6) + 's';
-                fl.style.animationDelay = (Math.random() * 10) + 's';
-                fl.style.fontSize = (Math.random() * 30 + 18) + 'px';
+                fl.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                fl.style.animationDelay = (Math.random() * 8) + 's';
+                fl.style.fontSize = (Math.random() * 25 + 18) + 'px';
                 fl.style.opacity = Math.random() * 0.3 + 0.2;
                 fl.innerText = flowers[Math.floor(Math.random() * flowers.length)];
                 flowerContainer.appendChild(fl);
@@ -371,7 +390,42 @@
             const qrImage = document.getElementById('qrImage');
             const loadingQR = document.getElementById('loadingQR');
             const bankInfo = document.getElementById('bankInfo');
+            const musicStatus = document.getElementById('musicStatus');
+            const audio = document.getElementById('nhacTet');
+            
+            let isPlaying = false;
+            let playAttempts = 0;
+            const maxAttempts = 5;
 
+            // Hàm phát nhạc
+            function playMusic() {
+                if (isPlaying) return;
+                
+                audio.play()
+                    .then(() => {
+                        isPlaying = true;
+                        musicStatus.innerHTML = '<span>🔊</span><span>Đang phát nhạc Tết</span>';
+                        console.log('Music playing successfully');
+                    })
+                    .catch(error => {
+                        console.log('Play failed:', error);
+                        playAttempts++;
+                        
+                        if (playAttempts < maxAttempts) {
+                            setTimeout(playMusic, 800);
+                        } else {
+                            musicStatus.innerHTML = '<span>🔈</span><span>Chạm để phát nhạc</span>';
+                            musicStatus.style.pointerEvents = 'auto';
+                            musicStatus.style.cursor = 'pointer';
+                            musicStatus.onclick = () => {
+                                playMusic();
+                                musicStatus.style.pointerEvents = 'none';
+                            };
+                        }
+                    });
+            }
+
+            // Tạo QR
             async function generateQRFromAPI() {
                 try {
                     const payload = {
@@ -393,9 +447,7 @@
                         body: JSON.stringify(payload)
                     });
 
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
+                    if (!response.ok) throw new Error('Network response was not ok');
 
                     const data = await response.json();
                     
@@ -416,88 +468,39 @@
 
             generateQRFromAPI();
 
-            lixi.addEventListener('click', () => {
+            // Xử lý click bao lì xì
+            lixi.addEventListener('click', (e) => {
+                e.stopPropagation();
                 qr.classList.toggle('show');
                 lixi.style.transition = 'all 0.15s';
                 lixi.style.transform = 'rotate(0deg) scale(1.05)';
                 setTimeout(() => lixi.style.transform = '', 200);
-                
-                // Thử phát nhạc khi click vào bao lì xì nếu chưa phát
-                if (!isPlaying) {
-                    playMusic();
-                }
             });
 
             qr.addEventListener('click', (e) => e.stopPropagation());
 
-            const audio = document.getElementById('nhacTet');
-            const toggleBtn = document.getElementById('musicToggle');
-            const icon = toggleBtn.querySelector('.icon');
-            const textSpan = toggleBtn.querySelector('.text');
-            let isPlaying = false;
-            let playAttempts = 0;
-            const maxAttempts = 3;
-
-            function playMusic() {
-                if (isPlaying) return;
-                
-                audio.play()
-                    .then(() => {
-                        isPlaying = true;
-                        toggleBtn.classList.add('playing');
-                        icon.textContent = '🔊';
-                        textSpan.textContent = 'Đang phát';
-                        console.log('Music playing successfully');
-                    })
-                    .catch(error => {
-                        console.log('Play failed:', error);
-                        playAttempts++;
-                        
-                        if (playAttempts < maxAttempts) {
-                            setTimeout(playMusic, 500);
-                        } else {
-                            icon.textContent = '🔈';
-                            textSpan.textContent = 'Nhấn để phát';
-                        }
-                    });
-            }
-
-            function pauseMusic() {
-                audio.pause();
-                isPlaying = false;
-                toggleBtn.classList.remove('playing');
-                icon.textContent = '🔈';
-                textSpan.textContent = 'Đong Đầy';
-            }
-
-            toggleBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (isPlaying) {
-                    pauseMusic();
-                } else {
-                    playMusic();
-                }
-            });
-
+            // Load nhạc và thử phát
             audio.load();
-
-            // Tự động phát khi trang load
+            
+            // Phát nhạc khi trang load
             document.addEventListener('DOMContentLoaded', () => {
-                setTimeout(playMusic, 1000);
+                setTimeout(playMusic, 500);
             });
 
-            // Thử phát lại khi người dùng tương tác với trang
-            const userInteractions = ['click', 'touchstart', 'touchend', 'mousedown', 'keydown'];
-            
+            // Tương tác người dùng để phát nhạc (dự phòng)
+            const userInteractions = ['click', 'touchstart', 'touchend'];
             userInteractions.forEach(eventType => {
                 document.body.addEventListener(eventType, function initPlay() {
                     if (!isPlaying) {
                         playMusic();
                     }
-                    userInteractions.forEach(ev => {
-                        document.body.removeEventListener(ev, initPlay);
-                    });
-                }, { once: false });
+                }, { once: true });
+            });
+
+            // Xử lý lỗi audio
+            audio.addEventListener('error', (e) => {
+                console.error('Audio error:', e);
+                musicStatus.innerHTML = '<span>⚠️</span><span>Lỗi phát nhạc</span>';
             });
 
             // Hiệu ứng ban đầu
@@ -506,19 +509,9 @@
                 setTimeout(() => lixi.style.transform = '', 300);
             }, 500);
 
-            // Kiểm tra lỗi audio
-            audio.addEventListener('error', (e) => {
-                console.error('Audio error:', e);
-                icon.textContent = '⚠️';
-                textSpan.textContent = 'Lỗi nhạc';
-            });
-
-            // Thêm thông báo cho mobile
+            // Thông báo mobile
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                const note = document.createElement('div');
-                note.className = 'mobile-note';
-                note.innerHTML = '📱 Nhấn vào bao lì xì để phát nhạc';
-                document.querySelector('.footer-note').appendChild(note);
+                musicStatus.style.bottom = '50px';
             }
         })();
     </script>
